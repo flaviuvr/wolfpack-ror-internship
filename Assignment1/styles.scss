@@ -1,0 +1,40 @@
+$font-stack:    Poppins, sans-serif;
+$background-color: #FBFEF9;
+$primary-color: #1B2021;
+$secondary-color: #30343F;
+$accent-color: #89023E;
+
+body {
+    display: grid;
+    grid-template-columns: 1000px;
+
+    font: 100% $font-stack;
+    background-color: $background-color;
+    color: $primary-color;
+    
+    width: 1000px;
+    margin: auto;
+}
+
+nav {
+    color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    
+    #left {
+        font-size: 1.5em;
+    }
+
+    #right {
+        display: flex;
+        width: 500px;
+        justify-content: space-between;
+
+        #separator {
+            font-weight: 300;
+            color: $accent-color;
+        }
+    }
+}

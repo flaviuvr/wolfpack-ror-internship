@@ -1,0 +1,31 @@
+body {
+  display: grid;
+  grid-template-columns: 1000px;
+  font: 100% Poppins, sans-serif;
+  background-color: #FBFEF9;
+  color: #1B2021;
+  width: 1000px;
+  margin: auto;
+}
+
+nav {
+  color: #1B2021;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+nav #left {
+  font-size: 1.5em;
+}
+nav #right {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+nav #right #separator {
+  font-weight: 300;
+  color: #89023E;
+}
+
+/*# sourceMappingURL=styles.css.map */

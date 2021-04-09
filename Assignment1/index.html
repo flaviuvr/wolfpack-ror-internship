@@ -7,39 +7,171 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">  
+    <script src="app.js"></script>
     <title>Food Order</title>
 </head>
 <body>
-    <nav>
-        <span id="left">Canteen Koala</span>
+    
+    <div id="background">
+        <img src="./assets/back.jpeg" alt="">
+        <div id="selection-bar"></div>
+    </div>
 
-        <span id="right">
-            <div>Home</div>
-            <div id="separator">|</div>
-            <div>About</div>
-            <div id="separator">|</div>
-            <div>Service</div>
-            <div id="separator">|</div>
-            <div>Blog</div>
-            <div id="separator">|</div>
-            <div>Contact</div>
-        </span>
-    </nav>
-    
-    <div id="banner">
-        This should be lower
-    </div>
-    
-    <div id="selection">
-        This should be in the middle
-        
-    </div>
-    
     <div id="content">
-        This should be the lowest
-        <div id="card">
+        <nav>
+            <div id="left-nav">
+                Canteen Koala
+            </div>
+    
+            <div id="right-nav">
+                <div>Home</div>
+                <div id="separator">|</div>
+                <div>About</div>
+                <div id="separator">|</div>
+                <div>Service</div>
+                <div id="separator">|</div>
+                <div>Blog</div>
+                <div id="separator">|</div>
+                <div>Contact</div>
+            </div>
+        </nav>
         
+        <div id="banner">
+            <div id="main-text">
+                Order some <span id="highlight">delicious</span> food
+            </div>
+        
+            <div id="middle">
+                <img src="./assets/lines-backward-05.png" alt="" id="slashes">
+                <img src="./assets/koala-06.png" alt="" id="icon">
+                <img src="./assets/lines-forward-05.png" alt="" id="slashes">
+            </div>
+            
+            <div id="secondary-text">
+                Your favourite dishes are waiting for you. We are now bringing our exeplary customer service to your doorstep with our new delivery system. We strive to bring joy to your houses, as soon as possible.
+            </div>
         </div>
     </div>
+        
+        <div id="middle-section">
+            <div id="middle-elements">
+                <div id="left-middle">
+                    <div id="category-select">
+                        <select name="Category" id="category">
+                                <option value="category">CATEGORY</option>
+                                <option value="entrees">Entrees</option>
+                                <option value="salads">Salads</option>
+                                <option value="main-courses">Main</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="dessert">Dessert</option>
+                        </select>
+                        <span id="category-arrow-block"></span>
+                        <span id="category-arrow"></span>
+                    </div>
+
+                    <div id="sorting-select">
+                        <select name="Sorting" id="sorting">
+                                <option value="category">SORTING</option>
+                                <option value="price">Price</option>
+                                <option value="quantity">Quantity</option>
+                                <option value="delivery">Delivery</option>
+                        </select>
+                        <span id="sorting-arrow-block"></span>
+                        <span id="sorting-arrow"></span>
+                    </div>
+                    
+                    <div id="vegetarian-select">
+                        <select name="Vegetarian" id="vegetarian">
+                            <option value="vegetarian">VEGETARIAN</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        <span id="vegetarian-arrow-block"></span>
+                        <span id="vegetarian-arrow"></span>
+                    </div>
+                </div>
+    
+                <div id="right-middle">
+                    <label for="slider">PRICE</label>
+                    <span>0$</span>
+                    <input type="range" name="slider" id="slider" min="0" max="200" step="10" value="150" onchange="updateSlider()">
+                    <span id="upper-bound">150$</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="food-dishes">
+            <div id="card">
+                <img src="./assets/pancakes.png" alt="">
+                <div id="title">Pancakes</div>
+                <div id="category">Breakfast</div>
+                <div id="price">5.00$</div>
+            </div>
+
+            <div id="card">
+                <img src="./assets/salad.png" alt="">
+                <div id="title">Ceasar Salad</div>
+                <div id="category">Salads</div>
+                <div id="price">10.00$</div>
+            </div>
+
+            <div id="card">
+                <img src="./assets/steak.png" alt="">
+                <div id="title">Beef Steak</div>
+                <div id="category">Main Courses</div>
+                <div id="price">20.00$</div>
+            </div>
+
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+            
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+            
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+            
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+            
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+            
+            <div id="card">
+                <img src="./assets/lasagna.png" alt="">
+                <div id="title">Lasagna</div>
+                <div id="category">Main Courses</div>
+                <div id="price">18.00$</div>
+            </div>
+        </div>
+        
+    
 </body>
 </html>

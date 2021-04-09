@@ -202,13 +202,18 @@ nav #right-nav #separator {
 #middle-section #right-middle input {
   -webkit-appearance: none;
   margin: 5px 0;
+  border-radius: 10px;
 }
 #middle-section #right-middle input::-webkit-slider-runnable-track {
   -webkit-appearance: slider-horizontal;
-  background-color: #aaaaaa;
+  background-color: #FBFEF9;
   padding: 0px;
   margin: 0px;
-  border-radius: 5px;
+  border: 0.5px solid #be0d5d;
+  border-radius: 10px;
+}
+#middle-section #right-middle input:focus {
+  outline: none;
 }
 #middle-section #right-middle input::-webkit-slider-thumb {
   background-color: #be0d5d;

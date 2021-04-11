@@ -4,16 +4,20 @@ body {
   font: 100% Poppins, sans-serif;
 }
 
-#content {
+#upper {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  color: #1B2021;
+  z-index: 1;
+  color: #1b2021;
   width: 1000px;
-  margin: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 nav {
-  color: #FBFEF9;
+  color: #fbfef9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +37,7 @@ nav #right-nav #separator {
 }
 
 #banner {
-  color: #FBFEF9;
+  color: #fbfef9;
   text-align: center;
 }
 #banner #main-text {
@@ -68,9 +72,9 @@ nav #right-nav #separator {
   height: 50px;
   width: 100vw;
   background-color: #ececec;
-  margin-top: 220px;
   display: flex;
   margin-right: auto;
+  margin-top: -7px;
 }
 #middle-section #middle-elements {
   width: 1000px;
@@ -206,7 +210,7 @@ nav #right-nav #separator {
 }
 #middle-section #right-middle input::-webkit-slider-runnable-track {
   -webkit-appearance: slider-horizontal;
-  background-color: #FBFEF9;
+  background-color: #fbfef9;
   padding: 0px;
   margin: 0px;
   border: 0.5px solid #be0d5d;
@@ -224,20 +228,13 @@ nav #right-nav #separator {
   border-radius: 50%;
   background: #be0d5d;
   cursor: pointer;
-  box-shadow: 1px 1px 1px #1B2021;
+  box-shadow: 1px 1px 1px #1b2021;
   /* Add cool effects to your sliders! */
 }
 
-#background {
-  position: absolute;
-  z-index: -1;
-  background-color: #FBFEF9;
-  height: 100vh;
-}
-#background img {
+img {
+  position: relative;
   max-width: 100%;
-  padding: 0px;
-  margin: 0px;
 }
 
 #food-dishes {
@@ -267,7 +264,7 @@ nav #right-nav #separator {
   overflow: visible;
 }
 #food-dishes #card #title {
-  color: #1B2021;
+  color: #1b2021;
   font-size: 1.4em;
   font-weight: 700;
   pointer-events: none;

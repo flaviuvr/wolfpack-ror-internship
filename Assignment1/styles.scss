@@ -24,25 +24,23 @@ body {
 }
 
 .navbar {
-  nav {
+  display: flex;
+  color: $light-color;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  #left-nav {
+    font-size: 1.5em;
+  }
+
+  #right-nav {
     display: flex;
-    color: $light-color;
+    width: 500px;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 0px;
-    #left-nav {
-      font-size: 1.5em;
-    }
 
-    #right-nav {
-      display: flex;
-      width: 500px;
-      justify-content: space-between;
-
-      #separator {
-        font-weight: 700;
-        color: $accent-color;
-      }
+    #separator {
+      font-weight: 700;
+      color: $accent-color;
     }
   }
 }
@@ -210,7 +208,7 @@ body {
     }
   }
 
-  select {
+  .selection {
     font: 100% $font-stack;
     font-weight: 700;
     font-size: 1em;

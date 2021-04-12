@@ -4,7 +4,7 @@ body {
   font: 100% Poppins, sans-serif;
 }
 
-#upper {
+#top-section {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -16,22 +16,22 @@ body {
   margin: 0 auto;
 }
 
-nav {
-  color: #fbfef9;
+.navbar nav {
   display: flex;
+  color: #fbfef9;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
 }
-nav #left-nav {
+.navbar nav #left-nav {
   font-size: 1.5em;
 }
-nav #right-nav {
+.navbar nav #right-nav {
   display: flex;
   width: 500px;
   justify-content: space-between;
 }
-nav #right-nav #separator {
+.navbar nav #right-nav #separator {
   font-weight: 700;
   color: #be0d5d;
 }
@@ -232,8 +232,10 @@ nav #right-nav #separator {
   /* Add cool effects to your sliders! */
 }
 
-img {
+#background {
   position: relative;
+}
+#background img {
   max-width: 100%;
 }
 

@@ -10,7 +10,7 @@ body {
   font: 100% $font-stack;
 }
 
-#upper {
+#top-section {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -23,25 +23,26 @@ body {
   margin: 0 auto;
 }
 
-nav {
-  color: $light-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0px;
-
-  #left-nav {
-    font-size: 1.5em;
-  }
-
-  #right-nav {
+.navbar {
+  nav {
     display: flex;
-    width: 500px;
+    color: $light-color;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    #left-nav {
+      font-size: 1.5em;
+    }
 
-    #separator {
-      font-weight: 700;
-      color: $accent-color;
+    #right-nav {
+      display: flex;
+      width: 500px;
+      justify-content: space-between;
+
+      #separator {
+        font-weight: 700;
+        color: $accent-color;
+      }
     }
   }
 }
@@ -277,9 +278,11 @@ nav {
   }
 }
 
-img {
+#background {
   position: relative;
-  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
 }
 
 #food-dishes {

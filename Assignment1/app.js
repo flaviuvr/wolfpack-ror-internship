@@ -86,7 +86,16 @@ function removeAllContent() {
 function createDishCard(dish) {
     const card = document.createElement("div");
     card.className = "card";
+    const info = createDishInfo(dish);
 
+    info.forEach(info => {
+        card.appendChild(info);
+    })
+
+    return card;
+}
+
+function createDishInfo(dish) {
     const image = document.createElement("img");
     image.src = dish.imageSource;
 
@@ -102,10 +111,5 @@ function createDishCard(dish) {
     price.className = "price";
     price.innerHTML = dish.price;
 
-    card.appendChild(image);
-    card.appendChild(title);
-    card.appendChild(category);
-    card.appendChild(price);
-
-    return card;
+    return [image, title, category, price];
 }

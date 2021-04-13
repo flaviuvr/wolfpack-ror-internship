@@ -6,53 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
     <title>Canteen Koala</title>
 </head>
 <body>
-  <div id="top-section">
+  <div class="top-section">
       <nav class="navbar">
-        <div id="left-nav">
+        <div class="left-nav">
           Canteen Koala
         </div>
-        
-        <div id="right-nav">
+
+        <div class="right-nav">
           <div>Home</div>
-          <div id="separator">|</div>
+          <div class="separator">|</div>
           <div>About</div>
-          <div id="separator">|</div>
+          <div class="separator">|</div>
           <div>Service</div>
-          <div id="separator">|</div>
+          <div class="separator">|</div>
           <div>Blog</div>
-          <div id="separator">|</div>
+          <div class="separator">|</div>
           <div>Contact</div>
         </div>
       </nav>
-      
-      <div id="banner">
-        <div id="main-text">
-          Order some <span id="highlight">delicious</span> food
+
+      <div class="banner">
+        <div class="main-text">
+          Order some <span class="highlight">delicious</span> food
         </div>
-        
-        <div id="middle">
-          <img src="./assets/lines-backward-05.png" alt="" id="slashes">
-          <img src="./assets/koala-06.png" alt="" id="icon">
-          <img src="./assets/lines-forward-05.png" alt="" id="slashes">
+
+        <div class="middle">
+          <img src="./assets/lines-backward-05.png" alt="slashes" class="slashes">
+          <img src="./assets/koala-06.png" alt="icon" class="icon">
+          <img src="./assets/lines-forward-05.png" alt="slashes" class="slashes">
         </div>
-        
-        <div id="secondary-text">
+
+        <div class="secondary-text">
           Your favourite dishes are waiting for you. We are now bringing our exeplary customer service to your doorstep with our new delivery system. We strive to bring joy to your houses, as soon as possible.
         </div>
       </div>
   </div>
-  <div id="background"> <img src="./assets/back.jpeg" alt="background-image"> </div>
+  <div class="background"> <img src="./assets/back.jpeg" alt="background-image"> </div>
 
-  <div id="middle-section">
-    <div id="middle-elements">
-      <div id="left-middle">
-        <div id="category-select">
-          <select class="selection" name="Category" id="category">
+  <div class="middle-section">
+    <div class="middle-elements">
+      <div class="left-middle">
+        <div class="category-select">
+          <select class="selection" name="Category" class="category">
             <option value="category">CATEGORY</option>
             <option value="entrees">Entrees</option>
             <option value="salads">Salads</option>
@@ -60,110 +60,110 @@
             <option value="breakfast">Breakfast</option>
             <option value="dessert">Dessert</option>
           </select>
-          <span id="category-arrow-block"></span>
-          <span id="category-arrow"></span>
+          <span class="category-arrow-block"></span>
+          <span class="category-arrow"></span>
         </div>
 
-        <div id="sorting-select">
-          <select class="selection" name="Sorting" id="sorting">
+        <div class="sorting-select">
+          <select class="selection" name="Sorting" class="sorting">
             <option value="category">SORTING</option>
             <option value="price">Price</option>
             <option value="quantity">Quantity</option>
             <option value="delivery">Delivery</option>
           </select>
-          <span id="sorting-arrow-block"></span>
-          <span id="sorting-arrow"></span>
+          <span class="sorting-arrow-block"></span>
+          <span class="sorting-arrow"></span>
         </div>
-                    
-        <div id="vegetarian-select">
-          <select class="selection" name="Vegetarian" id="vegetarian">
+
+        <div class="vegetarian-select">
+          <select class="selection" name="Vegetarian" class="vegetarian">
             <option value="vegetarian">VEGETARIAN</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
-          <span id="vegetarian-arrow-block"></span>
-          <span id="vegetarian-arrow"></span>
+          <span class="vegetarian-arrow-block"></span>
+          <span class="vegetarian-arrow"></span>
         </div>
       </div>
-        <div id="right-middle">
+        <div class="right-middle">
           <label for="slider">PRICE</label>
           <span>0$</span>
-          <input type="range" name="slider" id="slider" min="0" max="200" step="10" value="150" onchange="updateSlider()">
-          <span id="upper-bound">150$</span>
+          <input type="range" name="slider" class="slider" min="0" max="200" step="10" value="150" onchange="updateSlclasser()">
+          <span class="upper-bound">150$</span>
         </div>
     </div>
-  </div> 
+  </div>
 
-  <div id="food-dishes">
-    <div id="card">
+  <div class="food-dishes">
+    <div class="card">
       <img src="./assets/pancakes.png" alt="pancakes-image">
-      <div id="title">Pancakes</div>
-      <div id="category">Breakfast</div>
-      <div id="price">5.00$</div>
+      <div class="title">Pancakes</div>
+      <div class="category">Breakfast</div>
+      <div class="price">5.00$</div>
     </div>
 
-    <div id="card">
+    <div class="card">
       <img src="./assets/salad.png" alt="salad-image">
-      <div id="title">Ceasar Salad</div>
-      <div id="category">Salads</div>
-      <div id="price">10.00$</div>
+      <div class="title">Ceasar Salad</div>
+      <div class="category">Salads</div>
+      <div class="price">10.00$</div>
     </div>
 
-    <div id="card">
+    <div class="card">
       <img src="./assets/steak.png" alt="steak-image">
-      <div id="title">Beef Steak</div>
-      <div id="category">Main Courses</div>
-      <div id="price">20.00$</div>
+      <div class="title">Beef Steak</div>
+      <div class="category">Main Courses</div>
+      <div class="price">20.00$</div>
     </div>
 
-    <div id="card">
+    <div class="card">
       <img src="./assets/lasagna.png" alt="lasagna-image">
-      <div id="title">Lasagna</div>
-      <div id="category">Main Courses</div>
-      <div id="price">18.00$</div>
+      <div class="title">Lasagna</div>
+      <div class="category">Main Courses</div>
+      <div class="price">18.00$</div>
     </div>
 
-    <div id="card">
+    <div class="card">
       <img src="./assets/pizza.png" alt="pizza-image">
-      <div id="title">Pizza</div>
-      <div id="category">Main Courses</div>
-      <div id="price">18.00$</div>
-    </div>
-            
-    <div id="card">
-      <img src="./assets/burger.png" alt="burger-image">
-      <div id="title">Cheeseburger</div>
-      <div id="category">Main Courses</div>
-      <div id="price">20.00$</div>
-    </div>
-            
-    <div id="card">
-      <img src="./assets/pasta.png" alt="pasta-image">
-      <div id="title">Pasta Bolognese</div>
-      <div id="category">Main Courses</div>
-      <div id="price">16.00$</div>
-    </div>
-            
-    <div id="card">
-      <img src="./assets/chicken.png" alt="chicken-image">
-      <div id="title">Fried Chicken</div>
-      <div id="category">Main Courses</div>
-      <div id="price">15.00$</div>
-    </div>
-            
-    <div id="card">
-      <img src="./assets/sushi.png" alt="sushi-image">
-      <div id="title">Sushi</div>
-      <div id="category">Main Courses</div>
-      <div id="price">12.00$</div>
+      <div class="title">Pizza</div>
+      <div class="category">Main Courses</div>
+      <div class="price">18.00$</div>
     </div>
 
-    <div id="card">
-      <img src="./assets/cheesecake.png" alt="cheesecake-image">
-      <div id="title">Cheesecake</div>
-      <div id="category">Dessert</div>
-      <div id="price">9.00$</div>
+    <div class="card">
+      <img src="./assets/burger.png" alt="burger-image">
+      <div class="title">Cheeseburger</div>
+      <div class="category">Main Courses</div>
+      <div class="price">20.00$</div>
     </div>
-  </div>  
+
+    <div class="card">
+      <img src="./assets/pasta.png" alt="pasta-image">
+      <div class="title">Pasta Bolognese</div>
+      <div class="category">Main Courses</div>
+      <div class="price">16.00$</div>
+    </div>
+
+    <div class="card">
+      <img src="./assets/chicken.png" alt="chicken-image">
+      <div class="title">Fried Chicken</div>
+      <div class="category">Main Courses</div>
+      <div class="price">15.00$</div>
+    </div>
+
+    <div class="card">
+      <img src="./assets/sushi.png" alt="sushi-image">
+      <div class="title">Sushi</div>
+      <div class="category">Main Courses</div>
+      <div class="price">12.00$</div>
+    </div>
+
+    <div class="card">
+      <img src="./assets/cheesecake.png" alt="cheesecake-image">
+      <div class="title">Cheesecake</div>
+      <div class="category">Dessert</div>
+      <div class="price">9.00$</div>
+    </div>
+  </div>
 </body>
 </html>

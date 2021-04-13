@@ -1,7 +1,7 @@
 $font-stack: Poppins, sans-serif;
 $light-color: #fbfef9;
-$primary-color: #1b2021;
-$secondary-color: #656a77;
+$primary-color: .1b2021;
+$secondary-color: .656a77;
 $accent-color: #be0d5d;
 
 body {
@@ -10,7 +10,7 @@ body {
   font: 100% $font-stack;
 }
 
-#top-section {
+.top-section {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -29,61 +29,61 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0px;
-  #left-nav {
+  .left-nav {
     font-size: 1.5em;
   }
 
-  #right-nav {
+  .right-nav {
     display: flex;
     width: 500px;
     justify-content: space-between;
 
-    #separator {
+    .separator {
       font-weight: 700;
       color: $accent-color;
     }
   }
 }
 
-#banner {
+.banner {
   color: $light-color;
   text-align: center;
 
-  #main-text {
+  .main-text {
     padding-top: 20px;
     font-size: 3em;
     font-weight: 700;
 
-    #highlight {
+    .highlight {
       color: $accent-color;
     }
   }
 
-  #middle {
+  .middle {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 
-    #icon {
+    .icon {
       width: 60px;
       height: 60px;
     }
 
-    #slashes {
+    .slashes {
       width: 400px;
       height: 60px;
     }
   }
 
-  #secondary-text {
+  .secondary-text {
     font-size: 1em;
     padding-top: 30px;
     font-weight: 300;
   }
 }
 
-#middle-section {
+.middle-section {
   height: 50px;
   width: 100vw;
   background-color: #ececec;
@@ -91,7 +91,7 @@ body {
   margin-right: auto;
   margin-top: -7px;
 
-  #middle-elements {
+  .middle-elements {
     width: 1000px;
     display: flex;
     justify-content: space-between;
@@ -100,11 +100,11 @@ body {
     margin: auto;
   }
 
-  #category-select {
+  .category-select {
     position: relative;
     padding-right: 10px;
 
-    #category-arrow-block {
+    .category-arrow-block {
       position: absolute;
       display: block;
       top: 0;
@@ -115,7 +115,7 @@ body {
       pointer-events: none;
     }
 
-    #category-arrow {
+    .category-arrow {
       pointer-events: none;
       position: absolute;
       top: 0;
@@ -136,11 +136,11 @@ body {
     }
   }
 
-  #sorting-select {
+  .sorting-select {
     position: relative;
     padding-right: 10px;
 
-    #sorting-arrow-block {
+    .sorting-arrow-block {
       position: absolute;
       display: block;
       top: 0;
@@ -151,7 +151,7 @@ body {
       pointer-events: none;
     }
 
-    #sorting-arrow {
+    .sorting-arrow {
       pointer-events: none;
       position: absolute;
       top: 0;
@@ -172,11 +172,11 @@ body {
     }
   }
 
-  #vegetarian-select {
+  .vegetarian-select {
     position: relative;
     padding-right: 10px;
 
-    #vegetarian-arrow-block {
+    .vegetarian-arrow-block {
       position: absolute;
       display: block;
       top: 0;
@@ -187,7 +187,7 @@ body {
       pointer-events: none;
     }
 
-    #vegetarian-arrow {
+    .vegetarian-arrow {
       pointer-events: none;
       position: absolute;
       top: 0;
@@ -227,13 +227,13 @@ body {
     }
   }
 
-  #left-middle {
+  .left-middle {
     display: flex;
     width: 500px;
     justify-content: space-between;
   }
 
-  #right-middle {
+  .right-middle {
     display: flex;
     width: 300px;
     justify-content: space-between;
@@ -270,27 +270,27 @@ body {
         border-radius: 50%;
         background: $accent-color;
         cursor: pointer;
-        box-shadow: 1px 1px 1px $primary-color; /* Add cool effects to your sliders! */
+        box-shadow: 1px 1px 1px $primary-color;
       }
     }
   }
 }
 
-#background {
+.background {
   position: relative;
   img {
     max-width: 100%;
   }
 }
 
-#food-dishes {
+.food-dishes {
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 1000px;
   margin: auto;
 
-  #card {
+  .card {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -311,21 +311,21 @@ body {
       overflow: visible;
     }
 
-    #title {
+    .title {
       color: $primary-color;
       font-size: 1.4em;
       font-weight: 700;
       pointer-events: none;
     }
 
-    #category {
+    .category {
       color: $secondary-color;
       font-size: 1em;
       font-weight: 500;
       pointer-events: none;
     }
 
-    #price {
+    .price {
       color: $accent-color;
       font-size: 1.3em;
       pointer-events: none;

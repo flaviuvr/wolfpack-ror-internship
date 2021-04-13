@@ -4,12 +4,12 @@ body {
   font: 100% Poppins, sans-serif;
 }
 
-#top-section {
+.top-section {
   position: absolute;
   display: flex;
   flex-direction: column;
   z-index: 1;
-  color: #1b2021;
+  color: 0.1b2021;
   width: 1000px;
   left: 0;
   right: 0;
@@ -23,52 +23,52 @@ body {
   align-items: center;
   padding: 20px 0px;
 }
-.navbar #left-nav {
+.navbar .left-nav {
   font-size: 1.5em;
 }
-.navbar #right-nav {
+.navbar .right-nav {
   display: flex;
   width: 500px;
   justify-content: space-between;
 }
-.navbar #right-nav #separator {
+.navbar .right-nav .separator {
   font-weight: 700;
   color: #be0d5d;
 }
 
-#banner {
+.banner {
   color: #fbfef9;
   text-align: center;
 }
-#banner #main-text {
+.banner .main-text {
   padding-top: 20px;
   font-size: 3em;
   font-weight: 700;
 }
-#banner #main-text #highlight {
+.banner .main-text .highlight {
   color: #be0d5d;
 }
-#banner #middle {
+.banner .middle {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
 }
-#banner #middle #icon {
+.banner .middle .icon {
   width: 60px;
   height: 60px;
 }
-#banner #middle #slashes {
+.banner .middle .slashes {
   width: 400px;
   height: 60px;
 }
-#banner #secondary-text {
+.banner .secondary-text {
   font-size: 1em;
   padding-top: 30px;
   font-weight: 300;
 }
 
-#middle-section {
+.middle-section {
   height: 50px;
   width: 100vw;
   background-color: #ececec;
@@ -76,7 +76,7 @@ body {
   margin-right: auto;
   margin-top: -7px;
 }
-#middle-section #middle-elements {
+.middle-section .middle-elements {
   width: 1000px;
   display: flex;
   justify-content: space-between;
@@ -84,11 +84,11 @@ body {
   align-items: center;
   margin: auto;
 }
-#middle-section #category-select {
+.middle-section .category-select {
   position: relative;
   padding-right: 10px;
 }
-#middle-section #category-select #category-arrow-block {
+.middle-section .category-select .category-arrow-block {
   position: absolute;
   display: block;
   top: 0;
@@ -98,7 +98,7 @@ body {
   background-color: #ececec;
   pointer-events: none;
 }
-#middle-section #category-select #category-arrow {
+.middle-section .category-select .category-arrow {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -114,11 +114,11 @@ body {
   transform: rotate(45deg) scale(0.5, 0.5);
   -webkit-transform: rotate(45deg) scale(0.5, 0.5);
 }
-#middle-section #sorting-select {
+.middle-section .sorting-select {
   position: relative;
   padding-right: 10px;
 }
-#middle-section #sorting-select #sorting-arrow-block {
+.middle-section .sorting-select .sorting-arrow-block {
   position: absolute;
   display: block;
   top: 0;
@@ -128,7 +128,7 @@ body {
   background-color: #ececec;
   pointer-events: none;
 }
-#middle-section #sorting-select #sorting-arrow {
+.middle-section .sorting-select .sorting-arrow {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -144,11 +144,11 @@ body {
   transform: rotate(45deg) scale(0.5, 0.5);
   -webkit-transform: rotate(45deg) scale(0.5, 0.5);
 }
-#middle-section #vegetarian-select {
+.middle-section .vegetarian-select {
   position: relative;
   padding-right: 10px;
 }
-#middle-section #vegetarian-select #vegetarian-arrow-block {
+.middle-section .vegetarian-select .vegetarian-arrow-block {
   position: absolute;
   display: block;
   top: 0;
@@ -158,7 +158,7 @@ body {
   background-color: #ececec;
   pointer-events: none;
 }
-#middle-section #vegetarian-select #vegetarian-arrow {
+.middle-section .vegetarian-select .vegetarian-arrow {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -174,7 +174,7 @@ body {
   transform: rotate(45deg) scale(0.5, 0.5);
   -webkit-transform: rotate(45deg) scale(0.5, 0.5);
 }
-#middle-section .selection {
+.middle-section .selection {
   font: 100% Poppins, sans-serif;
   font-weight: 700;
   font-size: 1em;
@@ -182,33 +182,33 @@ body {
   border: 0px none red;
   background-color: #ececec;
 }
-#middle-section .selection:hover {
+.middle-section .selection:hover {
   max-width: 500px;
   max-height: 500px;
   box-shadow: 0px 5px 10px 4px #dfdfdf;
 }
-#middle-section .selection:focus {
+.middle-section .selection:focus {
   outline: none;
 }
-#middle-section #left-middle {
+.middle-section .left-middle {
   display: flex;
   width: 500px;
   justify-content: space-between;
 }
-#middle-section #right-middle {
+.middle-section .right-middle {
   display: flex;
   width: 300px;
   justify-content: space-between;
 }
-#middle-section #right-middle label {
+.middle-section .right-middle label {
   font-weight: 700;
 }
-#middle-section #right-middle input {
+.middle-section .right-middle input {
   -webkit-appearance: none;
   margin: 5px 0;
   border-radius: 10px;
 }
-#middle-section #right-middle input::-webkit-slider-runnable-track {
+.middle-section .right-middle input::-webkit-slider-runnable-track {
   -webkit-appearance: slider-horizontal;
   background-color: #fbfef9;
   padding: 0px;
@@ -216,10 +216,10 @@ body {
   border: 0.5px solid #be0d5d;
   border-radius: 10px;
 }
-#middle-section #right-middle input:focus {
+.middle-section .right-middle input:focus {
   outline: none;
 }
-#middle-section #right-middle input::-webkit-slider-thumb {
+.middle-section .right-middle input::-webkit-slider-thumb {
   background-color: #be0d5d;
   -webkit-appearance: none;
   border: 3px solid #ececec;
@@ -228,25 +228,24 @@ body {
   border-radius: 50%;
   background: #be0d5d;
   cursor: pointer;
-  box-shadow: 1px 1px 1px #1b2021;
-  /* Add cool effects to your sliders! */
+  box-shadow: 1px 1px 1px 0.1b2021;
 }
 
-#background {
+.background {
   position: relative;
 }
-#background img {
+.background img {
   max-width: 100%;
 }
 
-#food-dishes {
+.food-dishes {
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 1000px;
   margin: auto;
 }
-#food-dishes #card {
+.food-dishes .card {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -259,30 +258,30 @@ body {
   transition-property: height, width, box-shadow;
   transition-timing-function: ease;
 }
-#food-dishes #card:hover {
+.food-dishes .card:hover {
   width: 105%;
   height: 101%;
   box-shadow: 0px 5px 10px 4px #dfdfdf;
   overflow: visible;
 }
-#food-dishes #card #title {
-  color: #1b2021;
+.food-dishes .card .title {
+  color: 0.1b2021;
   font-size: 1.4em;
   font-weight: 700;
   pointer-events: none;
 }
-#food-dishes #card #category {
-  color: #656a77;
+.food-dishes .card .category {
+  color: 0.656a77;
   font-size: 1em;
   font-weight: 500;
   pointer-events: none;
 }
-#food-dishes #card #price {
+.food-dishes .card .price {
   color: #be0d5d;
   font-size: 1.3em;
   pointer-events: none;
 }
-#food-dishes #card img {
+.food-dishes .card img {
   width: 200px;
   height: 200px;
   border-radius: 50%;

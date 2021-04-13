@@ -109,5 +109,3 @@ function createDishCard(dish) {
 
     return card;
 }
-
-

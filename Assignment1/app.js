@@ -77,7 +77,7 @@ function loadCardElements() {
 
 function removeAllContent() {
     const gridItems = document.getElementById("food-dishes");
-    const addCard = document.getElementById("add-form");
+
     while (gridItems.children.length != 1){
         gridItems.removeChild(gridItems.firstElementChild);
     }

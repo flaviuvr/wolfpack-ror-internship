@@ -68,9 +68,8 @@ function addDishToStorage(dish) {
 function loadCardElements() {
     removeAllContent();
     const dishesGrid = document.getElementById("food-dishes");
-
     const dishesList = JSON.parse(localStorage.getItem("food-dishes")) || {};
-    console.log(dishesList);
+
     dishesList.forEach(dish => {
         dishesGrid.insertBefore(createDishCard(dish), dishesGrid.firstChild);
     })

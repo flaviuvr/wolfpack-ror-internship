@@ -1,7 +1,7 @@
 $font-stack: Poppins, sans-serif;
 $light-color: #fbfef9;
-$primary-color: .1b2021;
-$secondary-color: .656a77;
+$primary-color: 0.1b2021;
+$secondary-color: 0.656a77;
 $accent-color: #be0d5d;
 
 body {
@@ -283,7 +283,7 @@ body {
   }
 }
 
-.food-dishes {
+#food-dishes {
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -338,6 +338,36 @@ body {
       box-shadow: 0px 0px 10px 5px #c0c0c0;
       margin-bottom: 25px;
       pointer-events: none;
+    }
+
+  }
+
+  #add-card {
+
+    #add-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #add-form {
+      display: none;
+      flex-direction: column;
+
+      input[type=text] {
+        font: 100% $font-stack;
+        font-weight: 300;
+      }
+
+      input[type=button] {
+        font: 100% $font-stack;
+        background-color: $accent-color;
+        color: $light-color;
+        border: none;
+        width: 100%;
+        margin-top: 20px;
+        height: 30px;
+      }
     }
   }
 }

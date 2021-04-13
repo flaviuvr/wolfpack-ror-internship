@@ -10,7 +10,7 @@
     <script src="app.js"></script>
     <title>Canteen Koala</title>
 </head>
-<body>
+<body onload="loadCardElements()">
   <div class="top-section">
       <nav class="navbar">
         <div class="left-nav">
@@ -88,81 +88,39 @@
         <div class="right-middle">
           <label for="slider">PRICE</label>
           <span>0$</span>
-          <input type="range" name="slider" class="slider" min="0" max="200" step="10" value="150" onchange="updateSlclasser()">
-          <span class="upper-bound">150$</span>
+          <input type="range" name="slider" id="slider" min="0" max="200" step="10" value="150" onchange="updateSlider()">
+          <span id="upper-bound">150$</span>
         </div>
     </div>
   </div>
 
-  <div class="food-dishes">
-    <div class="card">
-      <img src="./assets/pancakes.png" alt="pancakes-image">
-      <div class="title">Pancakes</div>
-      <div class="category">Breakfast</div>
-      <div class="price">5.00$</div>
-    </div>
+  <div id="food-dishes">
 
-    <div class="card">
-      <img src="./assets/salad.png" alt="salad-image">
-      <div class="title">Ceasar Salad</div>
-      <div class="category">Salads</div>
-      <div class="price">10.00$</div>
-    </div>
+    <div class="card" onclick="" id="add-card">
+      <div id="add-display" onclick="updateFormRender()">
+        <img src="./assets/add.png" alt="add-image">
+        <div class="title">Add a new dish</div>
+      </div>
 
-    <div class="card">
-      <img src="./assets/steak.png" alt="steak-image">
-      <div class="title">Beef Steak</div>
-      <div class="category">Main Courses</div>
-      <div class="price">20.00$</div>
-    </div>
+      <div id="add-form">
+        <form action="submit">
+          <div>Enter Image Name:</div>
+          <input type="text" class="dish-input" id="input-image-dish">
 
-    <div class="card">
-      <img src="./assets/lasagna.png" alt="lasagna-image">
-      <div class="title">Lasagna</div>
-      <div class="category">Main Courses</div>
-      <div class="price">18.00$</div>
-    </div>
+          <div>Enter Title:</div>
+          <input type="text" class="dish-input" id="input-title-dish">
 
-    <div class="card">
-      <img src="./assets/pizza.png" alt="pizza-image">
-      <div class="title">Pizza</div>
-      <div class="category">Main Courses</div>
-      <div class="price">18.00$</div>
-    </div>
+          <div>Enter Category:</div>
+          <input type="text" class="dish-input" id="input-category-dish">
 
-    <div class="card">
-      <img src="./assets/burger.png" alt="burger-image">
-      <div class="title">Cheeseburger</div>
-      <div class="category">Main Courses</div>
-      <div class="price">20.00$</div>
-    </div>
+          <div>Enter Price:</div>
+          <input type="text" class="dish-input" id="input-price-dish">
 
-    <div class="card">
-      <img src="./assets/pasta.png" alt="pasta-image">
-      <div class="title">Pasta Bolognese</div>
-      <div class="category">Main Courses</div>
-      <div class="price">16.00$</div>
-    </div>
-
-    <div class="card">
-      <img src="./assets/chicken.png" alt="chicken-image">
-      <div class="title">Fried Chicken</div>
-      <div class="category">Main Courses</div>
-      <div class="price">15.00$</div>
-    </div>
-
-    <div class="card">
-      <img src="./assets/sushi.png" alt="sushi-image">
-      <div class="title">Sushi</div>
-      <div class="category">Main Courses</div>
-      <div class="price">12.00$</div>
-    </div>
-
-    <div class="card">
-      <img src="./assets/cheesecake.png" alt="cheesecake-image">
-      <div class="title">Cheesecake</div>
-      <div class="category">Dessert</div>
-      <div class="price">9.00$</div>
+          <div class="submit-button" onclick="updateFormRender(), handleFormInput()">
+            <input type="button" value="Submit">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </body>

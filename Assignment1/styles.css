@@ -238,14 +238,14 @@ body {
   max-width: 100%;
 }
 
-.food-dishes {
+#food-dishes {
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 1000px;
   margin: auto;
 }
-.food-dishes .card {
+#food-dishes .card {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -258,36 +258,58 @@ body {
   transition-property: height, width, box-shadow;
   transition-timing-function: ease;
 }
-.food-dishes .card:hover {
+#food-dishes .card:hover {
   width: 105%;
   height: 101%;
   box-shadow: 0px 5px 10px 4px #dfdfdf;
   overflow: visible;
 }
-.food-dishes .card .title {
+#food-dishes .card .title {
   color: 0.1b2021;
   font-size: 1.4em;
   font-weight: 700;
   pointer-events: none;
 }
-.food-dishes .card .category {
+#food-dishes .card .category {
   color: 0.656a77;
   font-size: 1em;
   font-weight: 500;
   pointer-events: none;
 }
-.food-dishes .card .price {
+#food-dishes .card .price {
   color: #be0d5d;
   font-size: 1.3em;
   pointer-events: none;
 }
-.food-dishes .card img {
+#food-dishes .card img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 5px #c0c0c0;
   margin-bottom: 25px;
   pointer-events: none;
+}
+#food-dishes #add-card #add-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#food-dishes #add-card #add-form {
+  display: none;
+  flex-direction: column;
+}
+#food-dishes #add-card #add-form input[type=text] {
+  font: 100% Poppins, sans-serif;
+  font-weight: 300;
+}
+#food-dishes #add-card #add-form input[type=button] {
+  font: 100% Poppins, sans-serif;
+  background-color: #be0d5d;
+  color: #fbfef9;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  height: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

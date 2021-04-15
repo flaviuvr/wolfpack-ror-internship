@@ -30,7 +30,7 @@ function updateFormRender() {
     const formAdd = document.getElementById("add-form");
 
     let shouldDisplayForm = formAdd.style.display == "none"
-    formAdd.style.display = shouldDisplayForm ? "flex" : "none";
+    displayAdd.style.display = shouldDisplayForm ? "flex" : "none";
     formAdd.style.display = shouldDisplayForm ? "none" : "flex";
 }
 

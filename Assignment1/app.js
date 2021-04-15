@@ -56,7 +56,7 @@ function resetFormValues(inputs){
 }
 
 function addDishToStorage(dish) {
-    var storedDishes = JSON.parse(localStorage.getItem("food-dishes")) || {};
+    let storedDishes = JSON.parse(localStorage.getItem("food-dishes")) || {};
     storedDishes.push(dish);
     localStorage.setItem("food-dishes", JSON.stringify(storedDishes));
 }

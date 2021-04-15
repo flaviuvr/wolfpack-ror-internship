@@ -29,13 +29,9 @@ function updateFormRender() {
     const displayAdd = document.getElementById("add-display");
     const formAdd = document.getElementById("add-form");
 
-    if (formAdd.style.display == "none") {
-        formAdd.style.display = "flex";
-        displayAdd.style.display = "none";
-    } else {
-        formAdd.style.display = "none";
-        displayAdd.style.display = "flex";
-    }
+    let shouldDisplayForm = formAdd.style.display == "none"
+    formAdd.style.display = shouldDisplayForm ? "flex" : "none";
+    formAdd.style.display = shouldDisplayForm ? "none" : "flex";
 }
 
 function handleFormInput() {

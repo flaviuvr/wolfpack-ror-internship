@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <title>Canteen Koala</title>
+</head>
+
+<body onload="loadCardElements()">
+  <div class="top-section">
+      <nav class="navbar">
+        <div class="left-nav">
+          Canteen Koala
+        </div>
+
+        <div class="right-nav">
+          <div>Home</div>
+          <div class="separator">|</div>
+          <div>About</div>
+          <div class="separator">|</div>
+          <div>Service</div>
+          <div class="separator">|</div>
+          <div>Blog</div>
+          <div class="separator">|</div>
+          <div>Contact</div>
+        </div>
+      </nav>
+
+      <div class="banner">
+        <div class="main-text">
+          Order some <span class="highlight">delicious</span> food
+        </div>
+
+        <div class="middle">
+          <img src="./assets/lines-backward-05.png" alt="slashes" class="slashes">
+          <img src="./assets/koala-06.png" alt="icon" class="icon">
+          <img src="./assets/lines-forward-05.png" alt="slashes" class="slashes">
+        </div>
+
+        <div class="secondary-text">
+          Your favourite dishes are waiting for you. We are now bringing our exeplary customer service to your doorstep with our new delivery system. We strive to bring joy to your houses, as soon as possible.
+        </div>
+      </div>
+  </div>
+  <div class="background"> <img src="./assets/back.jpeg" alt="background-image"> </div>
+
+  <div class="middle-section">
+    <div class="middle-elements">
+      <div class="left-middle">
+        <div class="category-select">
+          <select class="selection" name="Category" class="category">
+            <option value="category">CATEGORY</option>
+            <option value="entrees">Entrees</option>
+            <option value="salads">Salads</option>
+            <option value="main-courses">Main</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="dessert">Dessert</option>
+          </select>
+          <span class="category-arrow-block"></span>
+          <span class="category-arrow"></span>
+        </div>
+
+        <div class="sorting-select">
+          <select class="selection" name="Sorting" class="sorting">
+            <option value="category">SORTING</option>
+            <option value="price">Price</option>
+            <option value="quantity">Quantity</option>
+            <option value="delivery">Delivery</option>
+          </select>
+          <span class="sorting-arrow-block"></span>
+          <span class="sorting-arrow"></span>
+        </div>
+
+        <div class="vegetarian-select">
+          <select class="selection" name="Vegetarian" class="vegetarian">
+            <option value="vegetarian">VEGETARIAN</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <span class="vegetarian-arrow-block"></span>
+          <span class="vegetarian-arrow"></span>
+        </div>
+      </div>
+        <div class="right-middle">
+          <label for="slider">PRICE</label>
+          <span>0$</span>
+          <input type="range" name="slider" id="slider" min="0" max="200" step="10" value="150" onchange="updateSlider()">
+          <span id="upper-bound">150$</span>
+        </div>
+    </div>
+  </div>
+
+  <div id="food-dishes">
+
+    <div class="card" onclick="" id="add-card">
+      <div id="add-display" onclick="updateFormRender()">
+        <img src="./assets/add.png" alt="add-image">
+        <div class="title">Add a new dish</div>
+      </div>
+
+      <div id="add-form">
+        <form action="submit">
+          <div>Enter Image Name:</div>
+          <input type="text" class="dish-input" id="input-image-dish">
+
+          <div>Enter Title:</div>
+          <input type="text" class="dish-input" id="input-title-dish">
+
+          <div>Enter Category:</div>
+          <input type="text" class="dish-input" id="input-category-dish">
+
+          <div>Enter Price:</div>
+          <input type="text" class="dish-input" id="input-price-dish">
+
+          <div class="submit-button" onclick="updateFormRender(), handleFormInput()">
+            <input type="button" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

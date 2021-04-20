@@ -1,5 +1,6 @@
 require 'time'
 
+# Describes the schedule by which the service operates
 module Schedule
   START_WEEK_DAY = 1 # Monday
   END_WEEK_DAY = 5 # Friday
@@ -19,6 +20,7 @@ module Schedule
   end
 end
 
+# Clients of the car wash service. Will be updated once their car is ready for pick up and then pick a time to come for it
 class User
   attr_reader :name, :car, :time_of_arrival, :time_of_pickup
 
@@ -32,62 +34,46 @@ class User
 
   def update
     puts "#{@name} was notified"
-    puts "#{@name} will be there #{@time_of_pickup}"
-
     set_pick_up_time
+    puts "#{@name} will be there to pick car up #{@time_of_pickup}"
   end
 
   def set_pick_up_time
-    # Sets a random time after the current one (in MINUTES)
-    # @time_of_pickup = Time.new + rand(1..10) * 10 * 60
-
-    # Sets a random time after the current one (in SECONDS)
-    @time_of_pickup = Time.new + rand(1..10)
-
-    remaining_time = @time_of_pickup - Time.new
-    remaining_time.round
-  end
-
-  def pick_up_car
-    set_pick_up_time
-    remaining_time = @time_of_pickup - Time.new
-    remaining_time.round
+    # Sets a random time after the current one (in HOURS)
+    @time_of_pickup = Time.new + rand(1..100) * 10 * 60 * 60
+    # Check if the set time is in conformity with the schedule of the car wash
+    if Schedule.open?(@time_of_pickup)
+      @time_of_pickup
+    else
+      set_pick_up_time
+    end
   end
 end
 
+# Describes the identifier of each car, their license plate number
 class Car
-  attr_reader :license_plate_number, :in_station
+  attr_reader :license_plate_number
 
   def initialize(license_plate_number)
     @license_plate_number = license_plate_number
-    @in_station = false
   end
-
 end
 
+# Handles the actual cleaning of the cars
 class Station
-  attr_accessor :name, :busy
+  attr_accessor :name
 
   def initialize(name)
     @name = name
-    @busy = false
-  end
-
-  def start_clean(car)
-    puts "Now cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
-    @busy = true
-  end
-
-  def end_clean(car)
-    puts "Done cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
   end
 
   def clean_car(car)
-    start_clean(car)
-    end_clean(car)
+    puts "Now cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
+    puts "Done cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
   end
 end
 
+# The working service that handles the added cars and notifies the users
 class Service
   attr_accessor :clients, :station1, :station2
 
@@ -101,10 +87,7 @@ class Service
 
   def add_new_car(user)
     @clients[user] = user.car
-  end
-
-  def print_cars_in_service
-    @clients.each_value { |car| puts car.license_plate_number }
+    puts "#{user.name} came in at #{user.time_of_arrival} with car #{user.car.license_plate_number}"
   end
 
   def notify(client)
@@ -119,17 +102,23 @@ class Service
     notify(client1)
     @clients.delete(client1)
 
-    @station2.clean_car(car2) unless client2.nil?
-    notify(client2)
-    @clients.delete(client2)
+    unless client2.nil?
+      @station2.clean_car(car2)
+      notify(client2)
+      @clients.delete(client2)
+    end
 
   end
 
   def work
-    move_to_station(@clients.keys[0], @clients.keys[1]) if Schedule.open?(Time.now) until @clients == {}
+    # This can be commented to see the functionality from outside working hours
+    # return unless Schedule.open?(Time.now)
+
+    move_to_station(@clients.keys[0], @clients.keys[1]) until @clients == {}
   end
 end
 
+# Test data
 bmw = Car.new('CJ 93 RIF')
 vw = Car.new('CJ 72 RIF')
 ford = Car.new('B 113 PBD')
@@ -153,7 +142,3 @@ service.add_new_car(user5)
 service.add_new_car(user6)
 
 service.work
-
-# Questions :
-# - statie blocata daca nu e ridicata masina?
-# - Line 128

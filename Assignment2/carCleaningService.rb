@@ -88,3 +88,72 @@ class Station
   end
 end
 
+class Service
+  attr_accessor :clients, :station1, :station2
+
+  include Schedule
+
+  def initialize
+    @clients = {}
+    @station1 = Station.new('Station 1')
+    @station2 = Station.new('Station 2')
+  end
+
+  def add_new_car(user)
+    @clients[user] = user.car
+  end
+
+  def print_cars_in_service
+    @clients.each_value { |car| puts car.license_plate_number }
+  end
+
+  def notify(client)
+    client&.update
+  end
+
+  def move_to_station(client1, client2)
+    car1 = @clients[client1]
+    car2 = @clients[client2]
+
+    @station1.clean_car(car1)
+    notify(client1)
+    @clients.delete(client1)
+
+    @station2.clean_car(car2) unless client2.nil?
+    notify(client2)
+    @clients.delete(client2)
+
+  end
+
+  def work
+    move_to_station(@clients.keys[0], @clients.keys[1]) if Schedule.open?(Time.now) until @clients == {}
+  end
+end
+
+bmw = Car.new('CJ 93 RIF')
+vw = Car.new('CJ 72 RIF')
+ford = Car.new('B 113 PBD')
+toy = Car.new('B 12 AAA')
+audi = Car.new('CJ 11 AUD')
+alfa = Car.new('CJ 11 ALF')
+
+user1 = User.new('Flaviu', bmw, Time.new)
+user2 = User.new('Ionut', vw, Time.new)
+user3 = User.new('Vlad', ford, Time.new)
+user4 = User.new('Dan', toy, Time.new)
+user5 = User.new('Alex', audi, Time.new)
+user6 = User.new('Adi', alfa, Time.new)
+
+service = Service.new
+service.add_new_car(user1)
+service.add_new_car(user2)
+service.add_new_car(user3)
+service.add_new_car(user4)
+service.add_new_car(user5)
+service.add_new_car(user6)
+
+service.work
+
+# Questions :
+# - statie blocata daca nu e ridicata masina?
+# - Line 128

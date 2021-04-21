@@ -30,7 +30,7 @@ class User
     @time_of_arrival = time_of_arrival
   end
 
-  def update
+  def notify
     puts "#{name} was notified"
     set_pick_up_time
     puts "#{name} will be there to pick car up #{@time_of_pickup}"
@@ -82,8 +82,8 @@ class Service
     puts "#{user.name} came in at #{user.time_of_arrival} with car #{user.car.license_plate_number}"
   end
 
-  def notify(client)
-    client&.update
+  def notify_client(client)
+    client&.notify
   end
 
   def move_to_station(client1, client2)
@@ -91,15 +91,14 @@ class Service
     car2 = @clients[client2]
 
     @station1.clean_car(car1)
-    notify(client1)
+    notify_client(client1)
     @clients.delete(client1)
 
     unless client2.nil?
       @station2.clean_car(car2)
-      notify(client2)
+      notify_client(client2)
       @clients.delete(client2)
     end
-
   end
 
   def work

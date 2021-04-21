@@ -77,9 +77,9 @@ class Service
     @station2 = Station.new('Station 2')
   end
 
-  def add_new_car(user)
-    @clients[user] = user.car
-    puts "#{user.name} came in at #{user.time_of_arrival} with car #{user.car.license_plate_number}"
+  def add_new_client(client)
+    @clients[client] = client.car
+    puts "#{client.name} came in at #{client.time_of_arrival} with car #{client.car.license_plate_number}"
   end
 
   def notify_client(client)
@@ -125,11 +125,11 @@ user5 = User.new('Alex', audi, Time.new)
 user6 = User.new('Adi', alfa, Time.new)
 
 service = Service.new
-service.add_new_car(user1)
-service.add_new_car(user2)
-service.add_new_car(user3)
-service.add_new_car(user4)
-service.add_new_car(user5)
-service.add_new_car(user6)
+service.add_new_client(user1)
+service.add_new_client(user2)
+service.add_new_client(user3)
+service.add_new_client(user4)
+service.add_new_client(user5)
+service.add_new_client(user6)
 
 service.work

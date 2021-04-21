@@ -71,8 +71,6 @@ end
 class Service
   attr_accessor :clients, :station1, :station2
 
-  include Schedule
-
   def initialize
     @clients = {}
     @station1 = Station.new('Station 1')
@@ -106,7 +104,7 @@ class Service
 
   def work
     # This can be commented to see the functionality from outside working hours
-    # return unless Schedule.open?(Time.now)
+    return unless Schedule.open?(Time.now)
 
     move_to_station(@clients.keys[0], @clients.keys[1]) until @clients == {}
   end

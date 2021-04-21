@@ -2,8 +2,6 @@ require 'time'
 
 # Describes the schedule by which the service operates
 module Schedule
-  START_WEEK_DAY = 1 # Monday
-  END_WEEK_DAY = 5 # Friday
   START_TIME_HOUR = 8
   END_TIME_HOUR = 17
 
@@ -16,7 +14,7 @@ module Schedule
   end
 
   def self.open_day?(current_day_of_week)
-    current_day_of_week.wday > START_WEEK_DAY && current_day_of_week.wday < END_WEEK_DAY
+    !(current_day_of_week.saturday? || current_day_of_week.sunday?)
   end
 end
 
@@ -62,8 +60,8 @@ class Station
   end
 
   def clean_car(car)
-    puts "Now cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
-    puts "Done cleaning car #{car.license_plate_number} on #{name}" unless car.nil?
+    puts "Now cleaning car #{car.license_plate_number} on #{name}"
+    puts "Done cleaning car #{car.license_plate_number} on #{name}"
   end
 end
 

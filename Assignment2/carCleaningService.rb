@@ -100,14 +100,12 @@ class Service
   end
 
   def work
-    # This can be commented to see the functionality from outside working hours
     return unless Schedule.open?(Time.now)
 
     move_to_station(@clients.keys[0], @clients.keys[1]) until @clients == {}
   end
 end
 
-# Test data
 bmw = Car.new('CJ 93 RIF')
 vw = Car.new('CJ 72 RIF')
 ford = Car.new('B 113 PBD')

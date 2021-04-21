@@ -39,12 +39,8 @@ class User
   def set_pick_up_time
     # Sets a random time after the current one (in HOURS)
     @time_of_pickup = Time.new + rand(1..100) * 10 * 60 * 60
-    # Check if the set time is in conformity with the schedule of the car wash
-    if Schedule.open?(@time_of_pickup)
-      @time_of_pickup
-    else
-      set_pick_up_time
-    end
+
+    Schedule.open?(@time_of_pickup) ? @time_of_pickup : set_pick_up_time
   end
 end
 

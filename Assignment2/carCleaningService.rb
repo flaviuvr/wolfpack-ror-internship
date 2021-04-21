@@ -24,8 +24,6 @@ end
 class User
   attr_reader :name, :car, :time_of_arrival, :time_of_pickup
 
-  include Schedule
-
   def initialize(name, car, time_of_arrival)
     @name = name
     @car = car
@@ -33,9 +31,9 @@ class User
   end
 
   def update
-    puts "#{@name} was notified"
+    puts "#{name} was notified"
     set_pick_up_time
-    puts "#{@name} will be there to pick car up #{@time_of_pickup}"
+    puts "#{name} will be there to pick car up #{@time_of_pickup}"
   end
 
   def set_pick_up_time

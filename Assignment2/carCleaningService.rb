@@ -55,7 +55,7 @@ end
 
 # Handles the actual cleaning of the cars
 class Station
-  attr_accessor :name
+  attr_reader :name
 
   def initialize(name)
     @name = name

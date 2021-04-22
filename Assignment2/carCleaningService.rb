@@ -77,7 +77,7 @@ class Service
   end
 
   def add_new_client(client)
-    @clients[client] = client.car
+    clients[client] = client.car
     puts "#{client.name} came in at #{client.time_of_arrival} with car #{client.car.license_plate_number}"
   end
 
@@ -86,24 +86,21 @@ class Service
   end
 
   def move_to_station(client1, client2)
-    car1 = @clients[client1]
-    car2 = @clients[client2]
+    clean_car_in_station(station1, client1)
+    clean_car_in_station(station2, client2) unless client2.nil?
+  end
 
-    @station1.clean_car(car1)
-    notify_client(client1)
-    @clients.delete(client1)
-
-    unless client2.nil?
-      @station2.clean_car(car2)
-      notify_client(client2)
-      @clients.delete(client2)
-    end
+  def clean_car_in_station(station, client)
+    car = clients[client]
+    station.clean_car(car)
+    notify_client(client)
+    clients.delete(client)
   end
 
   def work
     return unless Schedule.open?(Time.now)
 
-    move_to_station(@clients.keys[0], @clients.keys[1]) until @clients == {}
+    move_to_station(clients.keys[0], clients.keys[1]) until clients == {}
   end
 end
 

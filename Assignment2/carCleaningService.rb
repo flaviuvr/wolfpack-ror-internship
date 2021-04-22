@@ -20,7 +20,8 @@ end
 
 # Clients of the car wash service. Will be updated once their car is ready for pick up and then pick a time to come for it
 class User
-  attr_reader :name, :car, :time_of_arrival, :time_of_pickup
+  attr_reader :name, :car, :time_of_arrival
+  attr_accessor :time_of_pickup
 
   def initialize(name, car, time_of_arrival)
     @name = name
@@ -31,14 +32,14 @@ class User
   def notify
     puts "#{name} was notified"
     set_pick_up_time
-    puts "#{name} will be there to pick car up #{@time_of_pickup}"
+    puts "#{name} will be there to pick car up #{time_of_pickup}"
   end
 
   def set_pick_up_time
     # Sets a random time after the current one (in HOURS)
     @time_of_pickup = Time.new + rand(1..100) * 10 * 60 * 60
 
-    Schedule.open?(@time_of_pickup) ? @time_of_pickup : set_pick_up_time
+    Schedule.open?(time_of_pickup) ? time_of_pickup : set_pick_up_time
   end
 end
 
